@@ -9,7 +9,7 @@ int main(){
 
 	int arr[3] = {a,b,c};
 		flag:for(i=0;i<=1;i++){
-				if(arr[i] > arr[i+1]){    //根据我之前看的视频，这个应该是冒泡排序
+				if(arr[i] > arr[i+1]){    //冒泡排序
 					mem = arr[i];
 					arr[i] = arr[i+1];
 					arr[i+1] = mem;
@@ -26,4 +26,5 @@ int main(){
 	}
 
 	return 0;
+
 }
