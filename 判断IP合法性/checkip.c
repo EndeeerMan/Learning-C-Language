@@ -35,7 +35,7 @@ int main(){
     }
     char *ip = NULL;
     ip = malloc(sizeof(char)*20);
-    char *splitflag = ".\0\n ";
+    char *splitflag = ".\n ";
     char *address_backup = strdup(address);
     int counter = 0;
 
