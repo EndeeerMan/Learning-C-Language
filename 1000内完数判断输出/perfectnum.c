@@ -45,7 +45,7 @@ int main(){
                 printf("%d\n",arr[size-1]);
             }
         }
-        if(arr!=NULL) free(arr);
+        free(arr);
     }
     return 0;
 }
