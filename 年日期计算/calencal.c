@@ -9,7 +9,7 @@ int leap(int year){
 }
 
 int modays(int month){
-    if(month == (1||3||5||7||8||10||12)){
+    if(month == 1 || month == 3|| month == 5|| month == 7|| month == 8|| month == 10|| month == 12){
         return 1;
     }else if(month == 2){
         return 2;
@@ -22,7 +22,7 @@ int main(){
     int year,month,day;
     int sum = 0;
     scanf("%d %d %d",&year,&month,&day);
-    for(int i=1;i<=month;i++){
+    for(int i=1;i<=month-1;i++){
         switch(leap(year)){
             case 1:
                 if(modays(i) == 2){
@@ -44,5 +44,6 @@ int main(){
                 break;
         }
     }
+    sum += day;
     printf("%d\n",sum);
 }
