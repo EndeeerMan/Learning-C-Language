@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 /*
 int prime(long long num){
@@ -16,7 +15,7 @@ int prime(long long num){
     if(num == 2) return 1;
     if(num <=1) return 0;
     if(num % 2 == 0) return 0;
-    for(long long i=3;i<(long long)sqrt(num);i+=2){
+    for(long long i=3;i*i<=num;i+=2){
         if(num % i == 0){
             return 0;
         }
@@ -49,15 +48,12 @@ int palin(long long num){
 int palin(long long num){
     long long temp1 = num;
     long long num2 = 0;
-
     int counter = 0;
     while(temp1){
         temp1 /= 10;
         counter++;
     }
-
     temp1 = num;
-
     for(int i=1;i<=counter;i++){
         num2 += temp1 % 10;
         if(i < counter){
@@ -68,6 +64,7 @@ int palin(long long num){
     if(num == num2) return 1;
     return 0;
 }
+
 int main(){
     long long a,b;
     scanf("%lld %lld",&a,&b);
