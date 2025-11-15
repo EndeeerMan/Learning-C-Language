@@ -3,7 +3,8 @@
 int prime(long long num){
     if(num == 2) return 1;
     if(num <=1) return 0;
-    for(long long i=2;i<num;i++){
+    if(num % 2 == 0) return 0;
+    for(long long i=3;i<num;i+=2){
         if(num % i == 0){
             return 0;
         }
@@ -34,9 +35,17 @@ int palin(long long num){
 int main(){
     long long a,b;
     scanf("%lld %lld",&a,&b);
-    for(long long i=a;i<=b;i++){
-        if(palin(i) && prime(i)){
-            printf("%lld\n",i);
+    if(a % 2 == 0){
+        for(long long i=a+1;i<=b;i+=2){
+            if(palin(i) && prime(i)){
+                printf("%lld\n",i);
+            }
+        }
+    }else{
+        for(long long i=a;i<=b;i+=2){
+            if(palin(i) && prime(i)){
+                printf("%lld\n",i);
+            }
         }
     }
 }
