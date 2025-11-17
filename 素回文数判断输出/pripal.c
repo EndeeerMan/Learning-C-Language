@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <assert.h>
 
 /*
 int prime(long long num){
@@ -68,6 +69,8 @@ int palin(long long num){
 int main(){
     long long a,b;
     scanf("%lld %lld",&a,&b);
+    assert(a<=b);
+    assert(a>=0 && b>=0);
     if(a % 2 == 0){
         for(long long i=a+1;i<=b;i+=2){
             if(palin(i) && prime(i)){
