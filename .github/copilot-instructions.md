@@ -7,19 +7,33 @@
 
 ## 关键开发工作流程
 
-### 1. 编译 C 语言程序
+### 1. Windows 环境下的编译
 本项目中的 C 语言程序通常使用 `gcc` 编译器进行编译。标准的编译命令模式如下：
 
 ```bash
-C:\mingw64\bin\gcc.exe -Wall -Wextra -g3 <source_file.c> -o <output_directory/executable_name.exe>
+C:\mingw64\bin\gcc.exe -Wall -Wextra -g3 <source_file.c> -o <output_directory/executable_name.exe> -lm
 ```
 
 **示例:**
 要编译 `素回文数判断输出/pripal.c`，命令如下：
 ```bash
-C:\mingw64\bin\gcc.exe -Wall -Wextra -g3 素回文数判断输出/pripal.c -o 素回文数判断输出/output/pripal.exe
+C:\mingw64\bin\gcc.exe -Wall -Wextra -g3 素回文数判断输出/pripal.c -o 素回文数判断输出/output/pripal.exe -lm
 ```
 请注意，`C:\mingw64\bin\gcc.exe` 是本环境中 `gcc` 的完整路径。在编写编译命令时，务必使用此完整路径。
+
+### 2. Linux 环境下的编译
+在 Linux 环境下，`gcc` 通常已安装并位于系统路径中。标准的编译命令模式如下：
+
+```bash
+gcc -Wall -Wextra -g3 <source_file.c> -o <output_directory/executable_name> -lm
+```
+
+**示例:**
+要编译 `素回文数判断输出/pripal.c`，命令如下：
+```bash
+gcc -Wall -Wextra -g3 素回文数判断输出/pripal.c -o 素回文数判断输出/output/pripal -lm
+```
+请注意，在 Linux 环境下，可执行文件通常没有 `.exe` 扩展名。
 
 ## 项目特定约定
 
