@@ -44,5 +44,6 @@ int main(){
     __int128 num = read_int128_from_string(cnum);
     print_int128(num);
     putchar('\n');
+    free(cnum);
     return 0;
 }
