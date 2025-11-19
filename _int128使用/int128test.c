@@ -17,6 +17,7 @@ void print_int128(__int128 num){
     for(i-=1;i>=0;i--){
         printf("%d",arr[i]);
     }
+    printf("\n");
     return;
 }
 
