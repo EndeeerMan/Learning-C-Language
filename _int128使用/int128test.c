@@ -29,7 +29,7 @@ __int128 read_int128_from_string(char *cnum){
     if(*cnum == '-'){cnum++;flag = -1;}
     if(*cnum == '+') cnum++;
     int digit = 0;
-    while(*cnum != '\0'){
+    while(isdigit((unsigned char)*cnum) && *cnum){
         digit = *cnum++ - '0';
         num = num*10 + digit;
     }
