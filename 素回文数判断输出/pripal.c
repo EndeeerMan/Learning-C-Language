@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <assert.h>
-#include <stdlib.h>
 
 /*
 int prime(long long num){
