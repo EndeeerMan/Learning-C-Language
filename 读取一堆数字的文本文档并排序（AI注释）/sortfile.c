@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// 冒泡排序函数（使用goto循环实现）
+/*// 冒泡排序函数（已废弃）（使用goto循环实现）
 // 参数：arr — 待排序的数组指针，length — 数组长度
 // 返回：排序后的数组指针（升序）
 long long *sorting(long long *arr, long long length) {
@@ -26,6 +26,34 @@ swap: // 标签，用于 goto 返回到重新排序
     }
 
     return arr;
+}
+*/
+
+void swap(long long *a,long long *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void quick_sort(long long *arr,int left,int right){
+    if(left >= right) return;
+    int l = left;
+    int r = right;
+    int bench = arr[left];
+
+    while(l < r){
+        while(bench <= arr[r] && r > left){
+            r--;
+        }
+        while(bench >= arr[l] && l < r){
+            l++;
+        }
+        if(l != r) swap(&arr[l],&arr[r]);
+    }
+    
+    swap(&arr[left],&arr[l]);
+    quick_sort(arr,left,l-1);
+    quick_sort(arr,l+1,right);
 }
 
 // 字符串转 long long 整数
@@ -107,16 +135,16 @@ int main() {
 
     // 使用 strtok 从复制的字符串中提取每个数字并转换为 long long
     arr[0] = str2int(strtok(raw_numbers_copy, split_flag));
-    for (int i = 1; i < counter; i++) {
+    for (int i = 1; i <= counter-1; i++) {
         arr[i] = str2int(strtok(NULL, split_flag));
     }
 
     // 排序
-    long long *result = sorting(arr, counter);
+    quick_sort(arr,0,counter-1);
 
     // 输出到文件（空格分隔）
     for (int i = 0; i < counter; i++) {
-        fprintf(output, "%lld ", result[i]);
+        fprintf(output, "%lld ", arr[i]);
     }
 
     // 释放资源
