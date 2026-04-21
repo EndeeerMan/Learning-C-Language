@@ -2,7 +2,9 @@
 #include <stdlib.h>
 
 int compare(const void *a,const void *b){
-    return (*(int *)a - *(int *)b);
+    if(*(int *)a > *(int *)b) return 1;
+    else if(*(int *)a < *(int *)b) return -1;
+    return 0;
 }
 
 int main(){
